@@ -205,7 +205,7 @@ func getHeartbeatInterval(envVarContext envVarContext) (map[string]string, error
 			heartbeat = "500"
 		case status.IBMCloud != nil:
 			if infrastructure.Status.PlatformStatus.IBMCloud.ProviderType == v1.IBMCloudProviderTypeVPC {
-				heartbeat = "2000"
+				heartbeat = "500"
 			}
 		}
 	}
@@ -229,7 +229,7 @@ func getElectionTimeout(envVarContext envVarContext) (map[string]string, error) 
 			timeout = "2500"
 		case status.IBMCloud != nil:
 			if infrastructure.Status.PlatformStatus.IBMCloud.ProviderType == v1.IBMCloudProviderTypeVPC {
-				timeout = "10000"
+				timeout = "2500"
 			}
 		}
 	}
